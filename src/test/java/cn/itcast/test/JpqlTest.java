@@ -27,12 +27,11 @@ public class JpqlTest {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         //3.查询全部
-        String jpql = "from Customer ";
+        String jpql = "from cn.itcast.domain.Customer ";
         Query query = em.createQuery(jpql);//创建Query查询对象，query对象才是执行jqpl的对象
 
         //发送查询，并封装结果集
         List list = query.getResultList();
-
         for (Object obj : list) {
             System.out.print(obj);
         }
